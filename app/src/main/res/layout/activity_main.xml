@@ -58,6 +58,7 @@
         android:layout_height="60dp"
         android:layout_marginBottom="76dp"
         android:text="click me"
+        android:onClick="clickme"
          android:shadowColor="#FB0000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -1,31 +1,26 @@
 package com.example.happybirthday
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+    }
 
-        val nameInput: EditText = findViewById(R.id.nameInput)
-        val showToastButton: Button = findViewById(R.id.buttonok)
-
-        showToastButton.setOnClickListener {
-            val name = nameInput.text.toString()
-            if (name.isNotEmpty()) {
-                Toast.makeText(this, "button clicked and your name is $name", Toast.LENGTH_SHORT)
-                    .show()
-            }
-            else{
-                Toast.makeText(this, "please enter your name", Toast.LENGTH_SHORT)
-                    .show()
-            }
+        fun clickme(view: View) {
+            val input:EditText = findViewById(R.id.nameInput)
+            val name = input.editableText.toString()
+            val intent = Intent(this,Bithdaygreeting::class.java)
+           intent.putExtra(Bithdaygreeting.NAME_EXTRA,name)
+            startActivity(intent)
         }
     }
-}
+
+
