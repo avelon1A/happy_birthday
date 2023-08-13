@@ -18,7 +18,14 @@ class MainActivity : AppCompatActivity() {
 
         showToastButton.setOnClickListener {
             val name = nameInput.text.toString()
-            Toast.makeText(this, "button clicked and your name is $name", Toast.LENGTH_SHORT).show()
+            if (name.isNotEmpty()) {
+                Toast.makeText(this, "button clicked and your name is $name", Toast.LENGTH_SHORT)
+                    .show()
+            }
+            else{
+                Toast.makeText(this, "please enter your name", Toast.LENGTH_SHORT)
+                    .show()
             }
         }
     }
+}
